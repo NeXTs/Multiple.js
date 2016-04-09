@@ -1,493 +1,493 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Multiple.js</title>
-    <meta name="description" content="Multiple.js - Share background over multiple elements"/>
-	<meta name="author" content="Denis Lukov"/>
-	<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico?' />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.4.1/themes/prism.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
-    <link rel="stylesheet" href="./dist/styles/homepage.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Multiple.js</title>
+  <meta name="description" content="Multiple.js - Share background over multiple elements"/>
+  <meta name="author" content="Denis Lukov"/>
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico?' />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/prism/1.4.1/themes/prism.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+  <link rel="stylesheet" href="./dist/styles/homepage.css">
 </head>
 <body>
-	<a href="https://github.com/NeXTs/Multiple.js" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  <a href="https://github.com/NeXTs/Multiple.js" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#64CEAA; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  <div class="ui left aligned container">
+    <h1 class="ui header main-header">
+      <span class="main-title">Multiple.js</span>
+      <div class="sub header main-title-description">Experiment of sharing background over multiple elements</div>
+      <div class="sub header main-title-author">Research by Denis Lukov, creator of <a href="https://github.com/NeXTs/Clusterize.js" target="_blank">Clusterize.js</a> and <a href="https://github.com/NeXTs/Jets.js" target="_blank">Jets.js</a></div>
+    </h1>
+    <div class="ui divider"></div>
+    <p>Surfing over dribbble concepts I stumbled upon a <a href="https://dribbble.com/shots/1738453-Xonom" target="_blank" class="popup" data-html='<img src="./dist/images/xonom-preview.jpg" alt="Xonom">' data-position="bottom center">Xonom design by Cosmin Daniel</a>. I wondered how to accomplish such "background sharing over multiple elements" effect at HTML/CSS without any coordinates processing by JavaScript. This page is result of my research by this topic.</p>
+    <p>Check original <a href="https://dribbble.com/shots/1738453-Xonom/attachments/280896" target="_blank">Xonom</a> and notice how background gradient shares over multiple elements. Note that icons and text at lighter layers have gradient-color from darker layers, creating the illusion of underlying violet layer. In addition to that, layers pass background image (girl) with equal transparency so that layers can not be superimposed on each other. All this things can be implemented at CSS.</p>
+    <div class="ui divider"></div>
+  </div>
+  <div class="iframe-wrapper">
     <div class="ui left aligned container">
-        <h1 class="ui header main-header">
-			<span class="main-title">Multiple.js</span>
-			<div class="sub header main-title-description">Experiment of sharing background over multiple elements</div>
-			<div class="sub header main-title-author">Research by Denis Lukov, creator of <a href="https://github.com/NeXTs/Clusterize.js" target="_blank">Clusterize.js</a> and <a href="https://github.com/NeXTs/Jets.js" target="_blank">Jets.js</a></div>
-		</h1>
-		<div class="ui divider"></div>
-        <p>Surfing over dribbble concepts I stumbled upon a <a href="https://dribbble.com/shots/1738453-Xonom" target="_blank" class="popup" data-html='<img src="./dist/images/xonom-preview.jpg" alt="Xonom">' data-position="bottom center">Xonom design by Cosmin Daniel</a>. I wondered how to accomplish such "background sharing over multiple elements" effect at HTML/CSS without any coordinates processing by JavaScript. This page is result of my research by this topic.</p>
-        <p>Check original <a href="https://dribbble.com/shots/1738453-Xonom/attachments/280896" target="_blank">Xonom</a> and notice how background gradient shares over multiple elements. Note that icons and text at lighter layers have gradient-color from darker layers, creating the illusion of underlying violet layer. In addition to that, layers pass background image (girl) with equal transparency so that layers can not be superimposed on each other. All this things can be implemented at CSS.</p>
-        <div class="ui divider"></div>
+      <iframe src="xonom.html" id="iframe" class="iframe" scrolling="no"></iframe>
     </div>
-    <div class="iframe-wrapper">
-    	<div class="ui left aligned container">
-    		<iframe src="xonom.html" id="iframe" class="iframe" scrolling="no"></iframe>
-    	</div>
+  </div>
+  <div class="ui container mt10 mb10">
+    <div class="ui grid stackable">
+      <div class="six wide column">
+        <div class="ui ignored warning message">
+          <div class="ui toggle checkbox" id="toggleGap">
+            <input type="checkbox" id="toggleGapInput" name="public" checked="checked">
+            <label for="toggleGapInput">Add gap between elements to make sure that background remains at same position</label>
+          </div>
+        </div>
+      </div>
+      <div class="five wide column">
+        <div class="ui ignored warning message">
+          <div class="ui toggle checkbox" id="toggleBackground">
+            <input type="checkbox" id="toggleBackgroundInput" name="public">
+            <label for="toggleBackgroundInput">Toggle background image/gradient to get idea how it looks</label>
+          </div>
+        </div>
+      </div>
+      <div class="five wide column">
+        <div class="ui ignored warning message">
+          <div class="ui toggle checkbox" id="toggleMissed">
+            <input type="checkbox" id="toggleMissedInput" name="public">
+            <label for="toggleMissedInput">Miss random layers to make sure that elements are independent</label>
+          </div>
+        </div>
+      </div>
     </div>
-	<div class="ui container mt10 mb10">
-	    <div class="ui grid stackable">
-	    	<div class="six wide column">
-		    	<div class="ui ignored warning message">
-		    		<div class="ui toggle checkbox" id="toggleGap">
-						<input type="checkbox" id="toggleGapInput" name="public" checked="checked">
-						<label for="toggleGapInput">Add gap between elements to make sure that background remains at same position</label>
-					</div>
-				</div>
-	    	</div>
-	    	<div class="five wide column">
-		    	<div class="ui ignored warning message">
-		    		<div class="ui toggle checkbox" id="toggleBackground">
-						<input type="checkbox" id="toggleBackgroundInput" name="public">
-						<label for="toggleBackgroundInput">Toggle background image/gradient to get idea how it looks</label>
-					</div>
-				</div>
-	    	</div>
-	    	<div class="five wide column">
-		    	<div class="ui ignored warning message">
-		    		<div class="ui toggle checkbox" id="toggleMissed">
-						<input type="checkbox" id="toggleMissedInput" name="public">
-						<label for="toggleMissedInput">Miss random layers to make sure that elements are independent</label>
-					</div>
-				</div>
-	    	</div>
-		</div>
-		<div class="ui divider"></div>
-    </div>
-    <div class="ui left aligned container">        
-        <div class="ui ignored info message">
-	        <h3>Not peeping into sources, think for a moment about how this effect may be implemented at <span class="force-one-line"><span class="ui teal label">pure CSS</span> ?</span></h3>
+    <div class="ui divider"></div>
+  </div>
+  <div class="ui left aligned container">        
+    <div class="ui ignored info message">
+      <h3>Not peeping into sources, think for a moment about how this effect may be implemented at <span class="force-one-line"><span class="ui teal label">pure CSS</span> ?</span></h3>
 
-	        <div class="ui styled fluid accordion">
-	            <div class="title">
-	                <i class="dropdown icon"></i> Show me how it works!
-	            </div>
-	            <div class="content">
-	                <pre><code class="language-css">.selector {
-	background-image: linear-gradient(white, black);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;  /* <- here it is */
+      <div class="ui styled fluid accordion">
+        <div class="title">
+          <i class="dropdown icon"></i> Show me how it works!
+        </div>
+        <div class="content">
+          <pre><code class="language-css">.selector {
+  background-image: linear-gradient(white, black);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;  /* <- here it is */
 
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }</code></pre>
-					<h3>Idea is just that simple!</h3>
-	                <p><code class="language-css">background-attachment: fixed</code> expands background to viewport's size and displays in every element appropriate chunk, exactly what is needed!</p>
-	                <p>But here we stumble upon a problem with mobile devices, as far as they seems to ignore <code class="language-css">background-attachment: fixed</code> property for <a href="https://twitter.com/paul_irish/status/306818591196602368" target="_blank">performance reasons</a>. Background behaves as with default value <code class="language-css">background-attachment: scroll</code>. And in addition to that there are even <a href="http://stackoverflow.com/questions/14115080/detect-support-for-background-attachment-fixed" target="_blank">no way to detect</a> support of this property.</p>
-	                <p>So how to handle this flaw at mobile devices? Think a bit on possible workaround and click a button below.</p>
-	                <div class="accordion">
-	                    <div class="title">
-	                        <i class="dropdown icon"></i> Mobile workaround
-	                    </div>
-	                    <div class="content">
-	                        <p>I bet the first thing you think was <code class="language-css">position: fixed; z-index: -1;</code> trick because this is frequent solution for such background-related cases.</p>
-	                        <p>Ok, let's assume we've added pseudo element with such styles</p>
-	                        <pre><code class="language-css">.selector {
-	width: 100px;
-	height: 100px;
+          <h3>Idea is just that simple!</h3>
+          <p><code class="language-css">background-attachment: fixed</code> expands background to viewport's size and displays in every element appropriate chunk, exactly what is needed!</p>
+          <p>But here we stumble upon a problem with mobile devices, as far as they seems to ignore <code class="language-css">background-attachment: fixed</code> property for <a href="https://twitter.com/paul_irish/status/306818591196602368" target="_blank">performance reasons</a>. Background behaves as with default value <code class="language-css">background-attachment: scroll</code>. And in addition to that there are even <a href="http://stackoverflow.com/questions/14115080/detect-support-for-background-attachment-fixed" target="_blank">no way to detect</a> support of this property.</p>
+          <p>So how to handle this flaw at mobile devices? Think a bit on possible workaround and click a button below.</p>
+          <div class="accordion">
+            <div class="title">
+              <i class="dropdown icon"></i> Mobile workaround
+            </div>
+            <div class="content">
+              <p>I bet the first thing you think was <code class="language-css">position: fixed; z-index: -1;</code> trick because this is frequent solution for such background-related cases.</p>
+              <p>Ok, let's assume we've added pseudo element with such styles</p>
+              <pre><code class="language-css">.selector {
+  width: 100px;
+  height: 100px;
 }
 
 .selector:before {
-	content: '';
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 
-	background-image: linear-gradient(white, black);
-	background-size: cover;
+  background-image: linear-gradient(white, black);
+  background-size: cover;
 }</code></pre>
-							<p>Background has been successfully expanded to <a href="http://codepen.io/NeXTs/pen/YqYPKr?editors=1100" target="_blank">full viewport size <i class="codepen icon"></i></a>. But we need to display only that chunk of background under <b>.selector</b> element. It turns out that background outside of <b>.selector</b> element must be cropped.</p>
-							<p>But how to do that? <code class="language-css">.selector { overflow: hidden; }</code> won't do the trick because it's descendant is <code class="language-css">position: fixed</code>. Check out by yourself at <a href="http://codepen.io/NeXTs/pen/BKwPrO/?editors=1100" target="_blank">Codepen <i class="codepen icon"></i></a></p>
-	                        <div class="accordion">
-	                            <div class="title">
-	                                <i class="dropdown icon"></i> Go further
-	                            </div>
-	                            <div class="content">
-	                                <p>A little known fact but <code class="language-css">position: fixed</code> <a href="http://stackoverflow.com/a/23859719/1221082" target="_blank">can be</a> cropped by <code class="language-css">clip: rect()</code> property! <a href="http://codepen.io/NeXTs/pen/PNJBdd?editors=1100" target="_blank">See <i class="codepen icon"></i></a></p>
-	                                <p>So that</p>
-	                        <pre><code class="language-css">.selector {
-	position: absolute;
-	clip: rect(0, auto, auto, 0);
+              <p>Background has been successfully expanded to <a href="http://codepen.io/NeXTs/pen/YqYPKr?editors=1100" target="_blank">full viewport size <i class="codepen icon"></i></a>. But we need to display only that chunk of background under <b>.selector</b> element. It turns out that background outside of <b>.selector</b> element must be cropped.</p>
+              <p>But how to do that? <code class="language-css">.selector { overflow: hidden; }</code> won't do the trick because it's descendant is <code class="language-css">position: fixed</code>. Check out by yourself at <a href="http://codepen.io/NeXTs/pen/BKwPrO/?editors=1100" target="_blank">Codepen <i class="codepen icon"></i></a></p>
+              <div class="accordion">
+                <div class="title">
+                  <i class="dropdown icon"></i> Go further
+                </div>
+                <div class="content">
+                  <p>A little known fact but <code class="language-css">position: fixed</code> <a href="http://stackoverflow.com/a/23859719/1221082" target="_blank">can be</a> cropped by <code class="language-css">clip: rect()</code> property! <a href="http://codepen.io/NeXTs/pen/PNJBdd?editors=1100" target="_blank">See <i class="codepen icon"></i></a></p>
+                  <p>So that</p>
+              <pre><code class="language-css">.selector {
+  position: absolute;
+  clip: rect(0, auto, auto, 0);
 
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .selector:before {
-	content: '';
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 
-	background-image: linear-gradient(white, black);
-	background-size: cover;
+  background-image: linear-gradient(white, black);
+  background-size: cover;
 }</code></pre>
-									<p>Single rule - parent element must be <code class="language-css">position: absolute</code> or <code class="language-css">position: fixed</code>, otherwise <code class="language-css">clip: rect()</code> won't crop.</p>
-									<p>But because of that limitation all <b>.selector</b> at mobile devise must be <code class="language-css">position: absolute</code> while desktop version does not have this restriction. This is not convenient at all. Elements must behave identically for both desktop and mobiles and does not contain extra conditions.</p>
+                  <p>Single rule - parent element must be <code class="language-css">position: absolute</code> or <code class="language-css">position: fixed</code>, otherwise <code class="language-css">clip: rect()</code> won't crop.</p>
+                  <p>But because of that limitation all <b>.selector</b> at mobile devise must be <code class="language-css">position: absolute</code> while desktop version does not have this restriction. This is not convenient at all. Elements must behave identically for both desktop and mobiles and does not contain extra conditions.</p>
 
-									<p>That's why Multiple.js was written, this little JS plugin takes care about all those markup differences, browser specific workarounds, vendor-prefixes, etc.. for you. All you left to do is simply specify selector and background.</p>
-									<p>If for some reason you decide to avoid JS plugin, want only pick styles and do all markup work by yourself, here are starting material for you:</p>
-									<div class="accordion">
-			                            <div class="title">
-			                                <i class="dropdown icon"></i> Show markup/styles
-			                            </div>
-			                            <div class="content">
-											<div class="ui grid stackable">
-												<div class="eight wide column">
-													<h3>For desktop <sup><a href="http://codepen.io/NeXTs/pen/JXrBmW?editors=1100" target="_blank">Codepen <i class="codepen icon"></i></a></sup></h3>
-													<pre><code class="language-markup">&lt;div class="selector multiple-desktop"&gt;Your content&lt;/div&gt;</code></pre>
-													<pre><code class="language-css">/* where .selector is your element.
+                  <p>That's why Multiple.js was written, this little JS plugin takes care about all those markup differences, browser specific workarounds, vendor-prefixes, etc.. for you. All you left to do is simply specify selector and background.</p>
+                  <p>If for some reason you decide to avoid JS plugin, want only pick styles and do all markup work by yourself, here are starting material for you:</p>
+                  <div class="accordion">
+                    <div class="title">
+                      <i class="dropdown icon"></i> Show markup/styles
+                    </div>
+                    <div class="content">
+                      <div class="ui grid stackable">
+                        <div class="eight wide column">
+                          <h3>For desktop <sup><a href="http://codepen.io/NeXTs/pen/JXrBmW?editors=1100" target="_blank">Codepen <i class="codepen icon"></i></a></sup></h3>
+                          <pre><code class="language-markup">&lt;div class="selector multiple-desktop"&gt;Your content&lt;/div&gt;</code></pre>
+                          <pre><code class="language-css">/* where .selector is your element.
 *  Give it any styles you need (any display, position, sizes...)
 *  Set appropriate background-image to .multiple-desktop, don't forget about vendor prefixes.
 */
 .selector {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .multiple-desktop {
  /* background-image: linear-gradient(rgba(133, 149, 232, 0.58), rgba(0,0,0, .5)); */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }</code></pre>
-												</div>
-												<div class="eight wide column">
-													<h3>For mobile <sup><a href="http://codepen.io/NeXTs/pen/xVXJQg?editors=1100" target="_blank">Codepen <i class="codepen icon"></i></a></sup></h3>
-													<pre><code class="language-markup">&lt;div class="selector"&gt;
-	&lt;div class="multiple-mobile-wrapper"&gt;
-		&lt;div class="multiple-mobile"&gt;&lt;/div&gt;
-		&lt;div class="multiple-mobile-content"&gt;Your content&lt;/div&gt;
-	&lt;/div&gt;
+                        </div>
+                        <div class="eight wide column">
+                          <h3>For mobile <sup><a href="http://codepen.io/NeXTs/pen/xVXJQg?editors=1100" target="_blank">Codepen <i class="codepen icon"></i></a></sup></h3>
+                          <pre><code class="language-markup">&lt;div class="selector"&gt;
+  &lt;div class="multiple-mobile-wrapper"&gt;
+    &lt;div class="multiple-mobile"&gt;&lt;/div&gt;
+    &lt;div class="multiple-mobile-content"&gt;Your content&lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-													<br/>
-													<pre><code class="language-css">/* where .selector is your element.
+                          <br/>
+                          <pre><code class="language-css">/* where .selector is your element.
 *  Give it any styles you need (any display, position, sizes...)
 *  Set appropriate background-image to .multiple-mobile:before, don't forget about vendor prefixes.
 */
 .selector {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .multiple-mobile-wrapper {
-    position: relative;
-    height: 100%; 
+  position: relative;
+  height: 100%; 
 }
 
 .multiple-mobile-content {
-	height: 100%;
+  height: 100%;
 }
 
 .multiple-mobile {
-    clip: rect(0 auto auto 0);
-    clip: rect(0, auto, auto, 0);
-    -webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    overflow: hidden;
+  clip: rect(0 auto auto 0);
+  clip: rect(0, auto, auto, 0);
+  -webkit-mask-image: -webkit-linear-gradient(top, #fff 0%, #fff 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    z-index: -1;
+  z-index: -1;
 }
 
 .multiple-mobile:before {
-    content: '';
-    
+  content: '';
+  
  /* background-image: linear-gradient(rgba(133, 149, 232, 0.58), rgba(0,0,0, .5)); */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }</code></pre>
-												</div>
-											</div>
-										</div>
-			                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-									<p>And, in addition to that I'd like to share thoughts about customizing viewport size.</p>
-									<p>As you know <code class="language-css">background-attachment: fixed</code> depends on viewport size, so background fills all screen from top left to bottom right point. Such background does not react on scroll, visually static and always located in the same place. Sometimes this behaviour is not what we need. Let's assume our whole background image must be strictly fit at element with sizes 500px x 500px (when actual viewport is 1920x1080). Or you need background scroll with the page (as by default).</p>
-									<p>See examples to understand the difference:</p>
-									<ul>
-										<li>From <a href="#" id="iframeExampleBefore" >this <i class="file image outline icon"></i></a> (background is stretched to full-page viewport and keeps fixed on scroll while container size is restricted, so that background isn't fit wholly in container)</li>
-										<li>To <a href="#" id="iframeExampleTo" >this <i class="file image outline icon"></i></a> (background is stretched to container size so is fully fit and keeps scrolls with the page)</li>
-									</ul>
-									<p>Any ideas how to do that?</p>
-			                        <div class="accordion">
-			                            <div class="title">
-			                                <i class="dropdown icon"></i> Go ahead
-			                            </div>
-			                            <div class="content">
-			                                <p>And the answer is: <b>Iframe</b>!</p>
-			                                <p>It was a surprise for me to find out that iframe has it's own viewport, I just didn't thought about this from this point of view before. Wrapping the content into iframe and setting iframe specific sizes - and background will fill iframe's size, not parent page viewport size. Check out real examples: <a href="http://localhost:3000/iframe_example/without_iframe.html" target="_blank">without iframe</a>, <a href="http://localhost:3000/iframe_example/with_iframe.html" target="_blank">with iframe</a>. To do that easily may be used convenient <a href="https://github.com/davidjbradshaw/iframe-resizer" target="_blank">iframe-resizer</a> library that observes iframe's inner content height and change iframe height accordingly.</p>
-			                            </div>
-			                        </div>
-	                            </div>
-	                        </div>
-							
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
+                  <p>And, in addition to that I'd like to share thoughts about customizing viewport size.</p>
+                  <p>As you know <code class="language-css">background-attachment: fixed</code> depends on viewport size, so background fills all screen from top left to bottom right point. Such background does not react on scroll, visually static and always located in the same place. Sometimes this behaviour is not what we need. Let's assume our whole background image must be strictly fit at element with sizes 500px x 500px (when actual viewport is 1920x1080). Or you need background scroll with the page (as by default).</p>
+                  <p>See examples to understand the difference:</p>
+                  <ul>
+                    <li>From <a href="#" id="iframeExampleBefore" >this <i class="file image outline icon"></i></a> (background is stretched to full-page viewport and keeps fixed on scroll while container size is restricted, so that background isn't fit wholly in container)</li>
+                    <li>To <a href="#" id="iframeExampleTo" >this <i class="file image outline icon"></i></a> (background is stretched to container size so is fully fit and keeps scrolls with the page)</li>
+                  </ul>
+                  <p>Any ideas how to do that?</p>
+                  <div class="accordion">
+                    <div class="title">
+                      <i class="dropdown icon"></i> Go ahead
+                    </div>
+                    <div class="content">
+                      <p>And the answer is: <b>Iframe</b>!</p>
+                      <p>It was a surprise for me to find out that iframe has it's own viewport, I just didn't thought about this from this point of view before. Wrapping the content into iframe and setting iframe specific sizes - and background will fill iframe's size, not parent page viewport size. Check out real examples: <a href="http://localhost:3000/iframe_example/without_iframe.html" target="_blank">without iframe</a>, <a href="http://localhost:3000/iframe_example/with_iframe.html" target="_blank">with iframe</a>. To do that easily may be used convenient <a href="https://github.com/davidjbradshaw/iframe-resizer" target="_blank">iframe-resizer</a> library that observes iframe's inner content height and change iframe height accordingly.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
         </div>
-        <h2 class="ui header">Quickstart</h2>
-        <div class="ui grid stackable">
-            <div class="six wide column">
-                <pre><code class="language-markup">bower i multiple.js</code></pre>
-            </div>
-            <div class="six wide column">
-                <pre><code class="language-markup">npm i multiple.js</code></pre>
-            </div>
-            <div class="four wide column" style="line-height: 60px;">
-                or <a href="https://github.com/NeXTs/Multiple.js" target="_blank">download from GitHub</a>
-            </div>
-        </div>
-        <h2 class="ui header">Include it on your page</h2>
-        <pre><code class="language-markup">&lt;link href="./multiple.css" rel="stylesheet"&gt;
+      </div>
+    </div>
+    <h2 class="ui header">Quickstart</h2>
+    <div class="ui grid stackable">
+      <div class="six wide column">
+        <pre><code class="language-markup">bower i multiple.js</code></pre>
+      </div>
+      <div class="six wide column">
+        <pre><code class="language-markup">npm i multiple.js</code></pre>
+      </div>
+      <div class="four wide column" style="line-height: 60px;">
+        or <a href="https://github.com/NeXTs/Multiple.js" target="_blank">download from GitHub</a>
+      </div>
+    </div>
+    <h2 class="ui header">Include it on your page</h2>
+    <pre><code class="language-markup">&lt;link href="./multiple.css" rel="stylesheet"&gt;
 &lt;script src="./multiple.min.js"&gt;&lt;/script&gt;</code></pre>
-        <h2 class="ui header">Usage</h2>
-        <div class="ui grid stackable">
-            <div class="eight wide column">
-                <pre><code class="language-markup">&lt;!--HTML--&gt;
+    <h2 class="ui header">Usage</h2>
+    <div class="ui grid stackable">
+      <div class="eight wide column">
+        <pre><code class="language-markup">&lt;!--HTML--&gt;
 &lt;div class="item"&gt;Content&lt;/div&gt;
 &lt;div class="item"&gt;Content&lt;/div&gt;
 &lt;div class="item"&gt;Content&lt;/div&gt;
 </code></pre>
-            </div>
-            <div class="eight wide column">
-                <pre><code class="language-javascript">// JavaScript
+      </div>
+      <div class="eight wide column">
+        <pre><code class="language-javascript">// JavaScript
 var multiple = new Multiple({
   selector: '.item',
   background: 'linear-gradient(#273463, #8B4256)'
 });</code></pre>
-            </div>
-        </div>
-        <h2 class="ui header">Options</h2>
-        <table class="ui celled padded table">
-            <thead>
-                <th>Name</th>
-                <th>Required</th>
-                <th>Description</th>
-                <th>Example</th>
-                <th>Default</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <h2 class="ui header">selector</h2>
-                    </td>
-                    <td>
-                        <b>Required</b>
-                    </td>
-                    <td>
-                        Selector. Refers to <code class="language-css">document.querySelectorAll()</code>
-                    </td>
-                    <td>'<code class="language-css">.items</code>'</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <h2 class="ui header">background</h2>
-                    </td>
-                    <td>
-                        <b>Required</b>
-                    </td>
-                    <td>
-                        Background image/gradient. Should be valid <code class="language-css">background-image</code> CSS property. Support multiple backgrounds. Must not contain vendor prefixes for gradients, they will be added automatically.
-                    </td>
-                    <td>'<code class="language-css">url(image.png), linear-gradient(pink, violet)</code>'</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <h2 class="ui header">affectText</h2>
-                    </td>
-                    <td>
-                        Optional
-                    </td>
-                    <td>
-                        <p>Specifies if background image should affect text instead of background.</p>
-                        <p>P.s. Works only at desktop webkit browsers. As fallback for mobile or other desktop browsers will be shown color specified in this property. See difference at <a href="http://codepen.io/NeXTs/pen/reGoGw" target="_blank">Codepen <i class="codepen icon"></i></a>.</p>
-                    </td>
-                    <td>'black'</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>
-                        <h2 class="ui header">opacity</h2>
-                    </td>
-                    <td>
-                        Optional
-                    </td>
-                    <td>
-                        <p>Obviously gradient's opacity may be set by <span class="popup" data-content="rgba(0, 0, 0, 0.5)" data-variation="inverted">RGBA syntax</span>.</p>
-                        <p>But if you are too lazy to convert HEX or RGB to RGBA, you might find this option useful. All HEX (<span class="popup" data-content="#000" data-variation="inverted">short</span> and <span class="popup" data-content="#000000" data-variation="inverted">long</span> forms) and RGB colors of gradients specified in <b>background</b> option will be converted to RGBA with specified opacity. See difference at <a href="http://codepen.io/NeXTs/pen/vGevOa" target="_blank">Codepen <i class="codepen icon"></i></a>.</p>
-                        <p>opacity supports two types of input:</p>
-                        <ul>
-                            <li>0.1 - number. Will be set RGBA with specified opacity 0.1</li>
-                            <li>true - boolean. Will be calculated RGBA color with as much transparency as possible over white (in other words looks same as RGB color with transparency and without loss of color)</li>
-                        </ul>
-                        <p>P.s. Works only with gradients, does not work with images.</p>
-                    </td>
-                    <td>true or 0.2</td>
-                    <td>false</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2>Methods</h2>
-        <table class="ui celled padded table">
-            <thead>
-                <th>Name</th>
-                <th>Params</th>
-                <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <h2 class="ui header">.update()</h2>
-                    </td>
-                    <td>
-                        <b>String</b>
-                    </td>
-                    <td>
-                        <p>Updates background image (if passed) and process newly added tags (wraps content at mobile devices, adds classes). Update background example: <code class="language-javascript">.update('url(image.png)');</code>. If you've appended new items to DOM and want apply Multiple for them use <code class="language-javascript">.update();</code></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h2 class="ui header">.destroy()</h2>
-                    </td>
-                    <td></td>
-                    <td>
-                        Destroys Multiple instance, removes classes, reverts layout to original state if was modified
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="ui grid">
-        	<div class="eight wide column">
-        		<h2>Experiments</h2>
-		        <ul>
-		            <li><a href="http://codepen.io/NeXTs/pen/YqraEr" target='_blank'><b>affectText</b> property: Fading out text to transparent at page edges <i class="codepen icon"></i></a></li>
-		        </ul>
-        	</div>
-        	<div class="eight wide column">
-        		<h2>Browsers support</h2>
-        		<ul>
-        			<li>Any desktop browser that supports <code class="language-css">background-attachment: fixed</code></li>
-        			<li>Mobile browsers that supports <code class="language-css">position: fixed</code> and <code class="language-css">clip: rect()</code>. I haven't chance to test it everywhere so if it doesn't work for you, create <a href="https://github.com/NeXTs/Multiple.js/issues" target="_blank">an issue</a> and I'll update supported device list.</li>
-        		</ul>
-        		<p>Please note, this is experimental library so performance of page may be low because of usage of intensive CSS properties to achieve desired effects.</p>
-        	</div>
-        </div>
-        <h2>Author</h2>
-        <div class="ui grid stackable">
-            <div class="eight wide column">
-                Denis Lukov [ <a href="https://github.com/NeXTs" target="_blank" rel="nofollow">GitHub</a> | <a href="https://ua.linkedin.com/pub/denis/58/13b/668" target="_blank" rel="nofollow">LinkedIn</a> | <a href="https://twitter.com/DenisLukov" target="_blank" rel="nofollow">Twitter</a> ]
-              <div><a href="mailto:youcancallmeden@gmail.com?Subject=Hey Den">Contact me <i class="mail outline icon"></i></a></div>
-            </div>
-            <div class="four wide column">
-                <a href="https://twitter.com/intent/tweet?text=Check+out+sharing+background+over+multiple+elements+experiment.+Multiple.js&amp;hashtags=multiplejs&amp;url=http%3A%2F%2Fnexts.github.io%2FMultiple.js" target="_blank">
-                    <i class="twitter icon" style="font-size: 4em;"></i>
-                </a>
-            </div>
-            <div class="four wide column">
-                Licensed under the MIT license
-            </div>
-        </div>
+      </div>
     </div>
-    <div class="ui modal" id="iframeExampleModalBefore">
-	  <i class="close icon"></i>
-	  <div class="header">
-	    From (note that background is stretched to full-page viewport and keeps fixed on scroll while container size is restricted, so that background isn't fit wholly in container)
-	  </div>
-	  <div class="content">
-	    <img class="full-width" src="./dist/images/from.gif" alt="From">
-	    <a href="./dist/images/from.gif" target=_blank>Open in new tab</a>
-	  </div>
-	</div>
-	<div class="ui modal" id="iframeExampleModalTo">
-	  <i class="close icon"></i>
-	  <div class="header">
-	    To (note that background is stretched to container size so is fully fit and keeps scrolls with the page)
-	  </div>
-	  <div class="content">
-	    <img class="full-width" src="./dist/images/to.gif" alt="After">
-	    <a href="./dist/images/to.gif" target=_blank>Open in new tab</a>
-	  </div>
-	</div>
+    <h2 class="ui header">Options</h2>
+    <table class="ui celled padded table">
+      <thead>
+        <th>Name</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <h2 class="ui header">selector</h2>
+          </td>
+          <td>
+            <b>Required</b>
+          </td>
+          <td>
+            Selector. Refers to <code class="language-css">document.querySelectorAll()</code>
+          </td>
+          <td>'<code class="language-css">.items</code>'</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="ui header">background</h2>
+          </td>
+          <td>
+            <b>Required</b>
+          </td>
+          <td>
+            Background image/gradient. Should be valid <code class="language-css">background-image</code> CSS property. Support multiple backgrounds. Must not contain vendor prefixes for gradients, they will be added automatically.
+          </td>
+          <td>'<code class="language-css">url(image.png), linear-gradient(pink, violet)</code>'</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="ui header">affectText</h2>
+          </td>
+          <td>
+            Optional
+          </td>
+          <td>
+            <p>Specifies if background image should affect text instead of background.</p>
+            <p>P.s. Works only at desktop webkit browsers. As fallback for mobile or other desktop browsers will be shown color specified in this property. See difference at <a href="http://codepen.io/NeXTs/pen/reGoGw" target="_blank">Codepen <i class="codepen icon"></i></a>.</p>
+          </td>
+          <td>'black'</td>
+          <td>false</td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="ui header">opacity</h2>
+          </td>
+          <td>
+            Optional
+          </td>
+          <td>
+            <p>Obviously gradient's opacity may be set by <span class="popup" data-content="rgba(0, 0, 0, 0.5)" data-variation="inverted">RGBA syntax</span>.</p>
+            <p>But if you are too lazy to convert HEX or RGB to RGBA, you might find this option useful. All HEX (<span class="popup" data-content="#000" data-variation="inverted">short</span> and <span class="popup" data-content="#000000" data-variation="inverted">long</span> forms) and RGB colors of gradients specified in <b>background</b> option will be converted to RGBA with specified opacity. See difference at <a href="http://codepen.io/NeXTs/pen/vGevOa" target="_blank">Codepen <i class="codepen icon"></i></a>.</p>
+            <p>opacity supports two types of input:</p>
+            <ul>
+              <li>0.1 - number. Will be set RGBA with specified opacity 0.1</li>
+              <li>true - boolean. Will be calculated RGBA color with as much transparency as possible over white (in other words looks same as RGB color with transparency and without loss of color)</li>
+            </ul>
+            <p>P.s. Works only with gradients, does not work with images.</p>
+          </td>
+          <td>true or 0.2</td>
+          <td>false</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Methods</h2>
+    <table class="ui celled padded table">
+      <thead>
+        <th>Name</th>
+        <th>Params</th>
+        <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <h2 class="ui header">.update()</h2>
+          </td>
+          <td>
+            <b>String</b>
+          </td>
+          <td>
+            <p>Updates background image (if passed) and process newly added tags (wraps content at mobile devices, adds classes). Update background example: <code class="language-javascript">.update('url(image.png)');</code>. If you've appended new items to DOM and want apply Multiple for them use <code class="language-javascript">.update();</code></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="ui header">.destroy()</h2>
+          </td>
+          <td></td>
+          <td>
+            Destroys Multiple instance, removes classes, reverts layout to original state if was modified
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="ui grid">
+      <div class="eight wide column">
+        <h2>Experiments</h2>
+        <ul>
+          <li><a href="http://codepen.io/NeXTs/pen/YqraEr" target='_blank'><b>affectText</b> property: Fading out text to transparent at page edges <i class="codepen icon"></i></a></li>
+        </ul>
+      </div>
+      <div class="eight wide column">
+        <h2>Browsers support</h2>
+        <ul>
+          <li>Any desktop browser that supports <code class="language-css">background-attachment: fixed</code></li>
+          <li>Mobile browsers that supports <code class="language-css">position: fixed</code> and <code class="language-css">clip: rect()</code>. I haven't chance to test it everywhere so if it doesn't work for you, create <a href="https://github.com/NeXTs/Multiple.js/issues" target="_blank">an issue</a> and I'll update supported device list.</li>
+        </ul>
+        <p>Please note, this is experimental library so performance of page may be low because of usage of intensive CSS properties to achieve desired effects.</p>
+      </div>
+    </div>
+    <h2>Author</h2>
+    <div class="ui grid stackable">
+      <div class="eight wide column">
+        Denis Lukov [ <a href="https://github.com/NeXTs" target="_blank" rel="nofollow">GitHub</a> | <a href="https://ua.linkedin.com/pub/denis/58/13b/668" target="_blank" rel="nofollow">LinkedIn</a> | <a href="https://twitter.com/DenisLukov" target="_blank" rel="nofollow">Twitter</a> ]
+        <div><a href="mailto:youcancallmeden@gmail.com?Subject=Hey Den">Contact me <i class="mail outline icon"></i></a></div>
+      </div>
+      <div class="four wide column">
+        <a href="https://twitter.com/intent/tweet?text=Check+out+sharing+background+over+multiple+elements+experiment.+Multiple.js&amp;hashtags=multiplejs&amp;url=http%3A%2F%2Fnexts.github.io%2FMultiple.js" target="_blank">
+          <i class="twitter icon" style="font-size: 4em;"></i>
+        </a>
+      </div>
+      <div class="four wide column">
+        Licensed under the MIT license
+      </div>
+    </div>
+  </div>
+  <div class="ui modal" id="iframeExampleModalBefore">
+    <i class="close icon"></i>
+    <div class="header">
+    From (note that background is stretched to full-page viewport and keeps fixed on scroll while container size is restricted, so that background isn't fit wholly in container)
+    </div>
+    <div class="content">
+    <img class="full-width" src="./dist/images/from.gif" alt="From">
+    <a href="./dist/images/from.gif" target=_blank>Open in new tab</a>
+    </div>
+  </div>
+  <div class="ui modal" id="iframeExampleModalTo">
+    <i class="close icon"></i>
+    <div class="header">
+    To (note that background is stretched to container size so is fully fit and keeps scrolls with the page)
+    </div>
+    <div class="content">
+    <img class="full-width" src="./dist/images/to.gif" alt="After">
+    <a href="./dist/images/to.gif" target=_blank>Open in new tab</a>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/iframe-resizer/3.5.3/iframeResizer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/prism/1.4.1/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
-    <script>
-    	// to keep iframe height equal to iframe's content
-	    iFrameResize();
-	    
-	    $(function() {
-	        $('.ui.accordion').accordion();
-	        $('.popup').popup();
-	        
-	        $('#iframeExampleBefore').on('click', function(e) {
-	        	e.preventDefault();
-	        	$('#iframeExampleModalBefore').modal('show');
-	        });
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/iframe-resizer/3.5.3/iframeResizer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/prism/1.4.1/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
+  <script>
+    // to keep iframe height equal to iframe's content
+    iFrameResize();
+    
+    $(function() {
+      $('.ui.accordion').accordion();
+      $('.popup').popup();
+      
+      $('#iframeExampleBefore').on('click', function(e) {
+        e.preventDefault();
+        $('#iframeExampleModalBefore').modal('show');
+      });
 
-	        $('#iframeExampleTo').on('click', function(e) {
-	        	e.preventDefault();
-	        	$('#iframeExampleModalTo').modal('show');
-	        })
+      $('#iframeExampleTo').on('click', function(e) {
+        e.preventDefault();
+        $('#iframeExampleModalTo').modal('show');
+      })
 
-	        var iframeWindow = document.getElementById('iframe').contentWindow;
+      var iframeWindow = document.getElementById('iframe').contentWindow;
 
-	        $('#toggleGap').checkbox({
-	        	onChange: function() {
-	        		var state = $(this).is(':checked');
-	        		iframeWindow.layersManager.toggleGap(state);
-	        	}
-	        });
+      $('#toggleGap').checkbox({
+        onChange: function() {
+          var state = $(this).is(':checked');
+          iframeWindow.layersManager.toggleGap(state);
+        }
+      });
 
-	        $('#toggleMissed').checkbox({
-	        	onChange: function() {
-	        		var state = $(this).is(':checked');
-	        		iframeWindow.layersManager.toggleMissed(state);
-	        	}
-	        });
+      $('#toggleMissed').checkbox({
+        onChange: function() {
+          var state = $(this).is(':checked');
+          iframeWindow.layersManager.toggleMissed(state);
+        }
+      });
 
-	        $('#toggleBackground').checkbox({
-	        	onChange: function() {
-	        		var state = +$(this).is(':checked');
-	        		iframeWindow.layersManager.toggleBackground(state);
-	        	}
-	        });
-	    });
-    </script>
+      $('#toggleBackground').checkbox({
+        onChange: function() {
+          var state = +$(this).is(':checked');
+          iframeWindow.layersManager.toggleBackground(state);
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -1,270 +1,270 @@
 @import 'base/normalize';
 
 *, *:before, *:after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 10px;
+  font-size: 10px;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: white;
 
-	&.separate-boxes {
-		.box {
-			background-clip: padding-box;
+  &.separate-boxes {
+    .box {
+      background-clip: padding-box;
 
-			&.light, &.dark {
-				border: 5px solid transparent;
-			}
-		}
-	}
+      &.light, &.dark {
+        border: 5px solid transparent;
+      }
+    }
+  }
 }
 
 .box {
-	float: left;
-	height: 180px;
-	position: relative;
-	text-align: center;
-	
-	&-unite {
-		& > * {
-			width: 100%;
-		}
+  float: left;
+  height: 180px;
+  position: relative;
+  text-align: center;
+  
+  &-unite {
+    & > * {
+      width: 100%;
+    }
 
-		&-1 {
-			height: 90%;
-		}
-		&-2 {
-			height: 10%;
-		}
-	}
+    &-1 {
+      height: 90%;
+    }
+    &-2 {
+      height: 10%;
+    }
+  }
 
-	&.missed {
-		visibility: hidden;
-	}
+  &.missed {
+    visibility: hidden;
+  }
 
-	.content {
-		display: flex;
-	    flex-direction: column;
-	    justify-content: center;
-	    align-items: center;
-	    height: 100%;
+  .content {
+    display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
 
-		z-index: 1;
-		position: relative;
-		text-transform: uppercase;
-		padding-top: 6px;
-		
-		&-main-text .fa {
-			background: inherit;
-			font-size: 4.8rem;
-			transform: translateY(-10px);
+    z-index: 1;
+    position: relative;
+    text-transform: uppercase;
+    padding-top: 6px;
+    
+    &-main-text .fa {
+      background: inherit;
+      font-size: 4.8rem;
+      transform: translateY(-10px);
 
-			@media all and (max-width: 480px) {
-				font-size: 3.7rem;
-			}
-		}
+      @media all and (max-width: 480px) {
+        font-size: 3.7rem;
+      }
+    }
 
-		&-accent {
-			font-size: 5.6rem;
-			font-weight: 100;
-			text-align: left;
+    &-accent {
+      font-size: 5.6rem;
+      font-weight: 100;
+      text-align: left;
 
-			@media all and (max-width: 610px) {
-				font-size: 5rem;
-			}
+      @media all and (max-width: 610px) {
+        font-size: 5rem;
+      }
 
-			@media all and (max-width: 480px) {
-				font-size: 4rem;
-			}
+      @media all and (max-width: 480px) {
+        font-size: 4rem;
+      }
 
-			@media all and (max-width: 450px) {
-				font-size: 3.5rem;
-			}
+      @media all and (max-width: 450px) {
+        font-size: 3.5rem;
+      }
 
-			@media all and (max-width: 420px) {
-				font-size: 3.3rem;
-			}
+      @media all and (max-width: 420px) {
+        font-size: 3.3rem;
+      }
 
-			&-helper {
-				border-right: 1px solid rgba(255, 255, 255, .5);
-				height: .7em;
-				display: inline-block;
-				margin-right: 10px;
-			}
-		}
+      &-helper {
+        border-right: 1px solid rgba(255, 255, 255, .5);
+        height: .7em;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
 
-		&-suffix {
-			font-size: 3.8rem;
-			font-weight: 100;
-			text-align: left;
-			text-transform: initial;
+    &-suffix {
+      font-size: 3.8rem;
+      font-weight: 100;
+      text-align: left;
+      text-transform: initial;
 
-			@media all and (max-width: 760px) {
-				font-size: 2rem;
-			}
+      @media all and (max-width: 760px) {
+        font-size: 2rem;
+      }
 
-			@media all and (max-width: 610px) {
-				font-size: 1.8rem;
-			}
+      @media all and (max-width: 610px) {
+        font-size: 1.8rem;
+      }
 
-			@media all and (max-width: 530px) {
-				font-size: 1.6rem;
-			}
-		}
+      @media all and (max-width: 530px) {
+        font-size: 1.6rem;
+      }
+    }
 
-		&-main-text {
-			height: 67px;
-			background: inherit;
-		}
+    &-main-text {
+      height: 67px;
+      background: inherit;
+    }
 
-		&-sub-text {
-			font-size: 1.2rem;
-			font-weight: 300;
-			text-align: left;
-			white-space: nowrap;
+    &-sub-text {
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-align: left;
+      white-space: nowrap;
 
-			@media all and (max-width: 670px) {
-				font-size: 1.1rem;
-			}
+      @media all and (max-width: 670px) {
+        font-size: 1.1rem;
+      }
 
-			@media all and (max-width: 610px) {
-				font-size: 1rem;
-			}
+      @media all and (max-width: 610px) {
+        font-size: 1rem;
+      }
 
-			@media all and (max-width: 500px) {
-				font-size: .9rem;
-			}
+      @media all and (max-width: 500px) {
+        font-size: .9rem;
+      }
 
-			@media all and (max-width: 430px) {
-				font-size: .8rem;
-			}
+      @media all and (max-width: 430px) {
+        font-size: .8rem;
+      }
 
-			@media all and (max-width: 410px) {
-				font-size: .7rem;
-			}
-		}
-	}
-	
-	&.dark .content-suffix {
-		opacity: .5;
-	}
-	
-	&.dark .content-sub-text{
-		span {
-			opacity: .5;
-		}
+      @media all and (max-width: 410px) {
+        font-size: .7rem;
+      }
+    }
+  }
+  
+  &.dark .content-suffix {
+    opacity: .5;
+  }
+  
+  &.dark .content-sub-text{
+    span {
+      opacity: .5;
+    }
 
-		.fa {
-			margin-right: 5px;
-		}
-	}
+    .fa {
+      margin-right: 5px;
+    }
+  }
 
 
-	&.shadow-bottom {
-		.shadows {
-			width: 100%;
-			height: 100px;
-		    overflow: hidden;
-		    position: absolute;
-		    z-index: 2;
-		    bottom: -100px;
+  &.shadow-bottom {
+    .shadows {
+      width: 100%;
+      height: 100px;
+        overflow: hidden;
+        position: absolute;
+        z-index: 2;
+        bottom: -100px;
 
-		    &:before {
-		    	content: '';
-		    	display: block;
-		    	position: relative;
-		    	box-shadow: 0px 0 15px 10px rgba(0, 0, 0, .25);
-			    height: 100px;
-			    top: -100px;
-		    }
-		    
-		}
-	}
+        &:before {
+          content: '';
+          display: block;
+          position: relative;
+          box-shadow: 0px 0 15px 10px rgba(0, 0, 0, .25);
+          height: 100px;
+          top: -100px;
+        }
+        
+    }
+  }
 
-	&.pink-icon {
-		.fa { color: #d85984; }
-	}
+  &.pink-icon {
+    .fa { color: #d85984; }
+  }
 
-	.borders {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+  .borders {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-	&.light {
-		&.border-right {
-			.borders {
-				border-right: 1px solid rgba(8, 38, 74, .15);
-			}
-		}
-		&.border-bottom {
-			.borders {
-				border-bottom: 1px solid rgba(8, 38, 74, .15);
-			}
-		}
-		&.border-top {
-			.borders {
-				border-top: 1px solid rgba(8, 38, 74, .15);
-			}
-		}
-	}
+  &.light {
+    &.border-right {
+      .borders {
+        border-right: 1px solid rgba(8, 38, 74, .15);
+      }
+    }
+    &.border-bottom {
+      .borders {
+        border-bottom: 1px solid rgba(8, 38, 74, .15);
+      }
+    }
+    &.border-top {
+      .borders {
+        border-top: 1px solid rgba(8, 38, 74, .15);
+      }
+    }
+  }
 
-	&.dark {
-		&.border-right {
-			.borders {
-				border-right: 1px solid rgba(255, 255, 255, .1);
-			}
-		}
-		&.border-bottom {
-			.borders {
-				border-bottom: 1px solid rgba(255, 255, 255, .1);
-			}
-		}
-		&.border-top {
-			.borders {
-				border-top: 1px solid rgba(255, 255, 255, .1);
-			}
-		}
-	}
+  &.dark {
+    &.border-right {
+      .borders {
+        border-right: 1px solid rgba(255, 255, 255, .1);
+      }
+    }
+    &.border-bottom {
+      .borders {
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+      }
+    }
+    &.border-top {
+      .borders {
+        border-top: 1px solid rgba(255, 255, 255, .1);
+      }
+    }
+  }
 
-	&-w33perc {
-		width: 33%;
-	}
+  &-w33perc {
+    width: 33%;
+  }
 
-	&-w17perc {
-		width: 17%;
+  &-w17perc {
+    width: 17%;
 
-		&.last {
-			width: 16%;
-		}
-	}
+    &.last {
+      width: 16%;
+    }
+  }
 
-	&-w25perc {
-		width: 25%;
-		height: 200px;
-	}
+  &-w25perc {
+    width: 25%;
+    height: 200px;
+  }
 
-	&-w100perc {
-		height: 214px;
-		width: 100%;
-	}
+  &-w100perc {
+    height: 214px;
+    width: 100%;
+  }
 
-	&-w16perc {
-		width: 16.66666666666666%;
-		height: 220px;
-	}
+  &-w16perc {
+    width: 16.66666666666666%;
+    height: 220px;
+  }
 
-	&-w20perc {
-		width: 20%;
-		height: 220px;
-	}
+  &-w20perc {
+    width: 20%;
+    height: 220px;
+  }
 }
 
 body:after{
