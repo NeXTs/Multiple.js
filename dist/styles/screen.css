@@ -373,8 +373,16 @@ body.separate-boxes .box.light,
 body.separate-boxes .box.dark {
   border: 5px solid transparent;
 }
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
 .box {
-  float: left;
   height: 180px;
   position: relative;
   text-align: center;
