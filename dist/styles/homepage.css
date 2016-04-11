@@ -54,6 +54,9 @@ body {
 .open-description.active .revert-arrow {
   display: none !important;
 }
+.open-description + .content .accordion .title {
+  color: black !important;
+}
 @-webkit-keyframes left-to-right {
   50% {
     -webkit-transform: translateX(5px);
