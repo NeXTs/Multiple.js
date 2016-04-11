@@ -38,37 +38,41 @@ body {
   margin-top: 4px !important;
 }
 
+.top-accordion {
+  padding: 0 !important;
+
+  & > .ui.blurring.segment {
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  .accordion .title {
+    color: black !important;
+  }
+}
+
 .open-description {
+  pointer-events: none;
   color: rgb(197, 59, 59) !important;
   font-size: 17px !important;
+  border: 0 !important;
 
+  .tada {
+    display: inline-block;
+    -webkit-animation-name: tada;
+    animation-name: tada;
+  }
+}
+
+.title {
   &:not(.active) {
-
-    .tada {
-      display: inline-block;
-      -webkit-animation-name: tada;
-      animation-name: tada;
-    }
-
-    i {
+    .move-arrow {
       animation: left-to-right 1s ease-in-out infinite;
 
       &.revert-arrow {
         transform: rotate(180deg) !important;
         animation: left-to-right-reverted 1s ease-in-out infinite .5s;
       }
-    }
-  }
-
-  &.active {
-    .revert-arrow {
-      display: none !important;
-    }
-  }
-
-  + .content {
-    .accordion .title {
-      color: black !important;
     }
   }
 }

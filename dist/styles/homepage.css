@@ -32,30 +32,36 @@ body {
   font-size: .9rem !important;
   margin-top: 4px !important;
 }
+.top-accordion {
+  padding: 0 !important;
+}
+.top-accordion > .ui.blurring.segment {
+  box-shadow: none !important;
+  border: 0 !important;
+}
+.top-accordion .accordion .title {
+  color: black !important;
+}
 .open-description {
+  pointer-events: none;
   color: #c53b3b !important;
   font-size: 17px !important;
+  border: 0 !important;
 }
-.open-description:not(.active) .tada {
+.open-description .tada {
   display: inline-block;
   -webkit-animation-name: tada;
   animation-name: tada;
 }
-.open-description:not(.active) i {
+.title:not(.active) .move-arrow {
   -webkit-animation: left-to-right 1s ease-in-out infinite;
           animation: left-to-right 1s ease-in-out infinite;
 }
-.open-description:not(.active) i.revert-arrow {
+.title:not(.active) .move-arrow.revert-arrow {
   -webkit-transform: rotate(180deg) !important;
           transform: rotate(180deg) !important;
   -webkit-animation: left-to-right-reverted 1s ease-in-out infinite 0.5s;
           animation: left-to-right-reverted 1s ease-in-out infinite 0.5s;
-}
-.open-description.active .revert-arrow {
-  display: none !important;
-}
-.open-description + .content .accordion .title {
-  color: black !important;
 }
 @-webkit-keyframes left-to-right {
   50% {
