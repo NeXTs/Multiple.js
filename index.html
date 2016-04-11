@@ -502,9 +502,9 @@ var multiple = new Multiple({
       var $openDescription = $("#openDescription");
       var $tada = $('#openDescriptionTadaEffect');
       function toggleTada() {
-        $tada.addClass('animated');
+        $tada.addClass('tada animated infinite');
         setTimeout(function() {
-          $tada.removeClass('animated');
+          $tada.removeClass('tada animated infinite');
           if($openDescription.hasClass('active')) return;
           setTimeout(toggleTada, 3000);
         }, 980);
