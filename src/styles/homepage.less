@@ -41,7 +41,15 @@ body {
 .open-description {
   color: rgb(197, 59, 59) !important;
   font-size: 17px !important;
+
   &:not(.active) {
+
+    .tada {
+      display: inline-block;
+      -webkit-animation-name: tada;
+      animation-name: tada;
+    }
+
     i {
       animation: left-to-right 1s ease-in-out infinite;
 
@@ -51,6 +59,7 @@ body {
       }
     }
   }
+
   &.active {
     .revert-arrow {
       display: none !important;
@@ -63,12 +72,48 @@ body {
     transform: translateX(5px);
   }
 }
+
 @keyframes left-to-right-reverted {
   50% {
     transform: translateX(5px) rotate(180deg);
   }
 }
 
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+
+  &.infinite {
+    animation-iteration-count: infinite;
+  }
+}
 
 .mt10 {
   margin-top: 10px;

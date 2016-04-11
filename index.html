@@ -74,8 +74,10 @@
       <h3>Not peeping into sources, think for a moment about how this effect may be implemented at <span class="force-one-line"><span class="ui teal label">pure CSS</span> ?</span></h3>
 
       <div class="ui styled fluid accordion">
-        <div class="title open-description">
-          <i class="dropdown icon"></i> Show me how it works!<i class="dropdown icon revert-arrow"></i>
+        <div class="title open-description" id="openDescription">
+          <span class="tada infinite" id="openDescriptionTadaEffect">
+            <i class="dropdown icon"></i> Show me how it works!<i class="dropdown icon revert-arrow"></i>
+          </span>
         </div>
         <div class="content">
           <pre><code class="language-css">.selector {
@@ -496,6 +498,18 @@ var multiple = new Multiple({
           iframeWindow.layersManager.toggleBackground(state);
         }
       });
+
+      var $openDescription = $("#openDescription");
+      var $tada = $('#openDescriptionTadaEffect');
+      function toggleTada() {
+        $tada.addClass('animated');
+        setTimeout(function() {
+          $tada.removeClass('animated');
+          if($openDescription.hasClass('active')) return;
+          setTimeout(toggleTada, 3000);
+        }, 980);
+      }
+      toggleTada();
     });
   </script>
 </body>
