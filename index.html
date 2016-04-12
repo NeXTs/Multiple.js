@@ -475,7 +475,9 @@ var multiple = new Multiple({
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
   <script>
     // to keep iframe height equal to iframe's content
-    iFrameResize();
+    iFrameResize({
+      checkOrigin: false
+    });
     
     $(function() {
       $('.ui.accordion').accordion();
