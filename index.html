@@ -508,11 +508,16 @@ var multiple = new Multiple({
 
       var showTada = true;
       var $tada = $('#openDescriptionTadaEffect');
-      $('.ui.dimmer').dimmer({
+      var $dimmer = $('.ui.dimmer');
+      $dimmer.dimmer({
         onHide: function() {
           showTada = false;
         }
       }).dimmer('show');
+      // workaround for some mobile phones
+      $dimmer.on('tap', function() {
+        $dimmer.dimmer('hide');
+      });
 
       function toggleTada() {
         if( ! showTada) return;
