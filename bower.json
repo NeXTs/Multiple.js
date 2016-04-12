@@ -1,6 +1,6 @@
 {
   "name": "multiple.js",
-  "description": "Sharing background over multiple elements",
+  "description": "Sharing background across multiple elements using CSS",
   "main": "multiple.js",
   "authors": [
     "Denis Lukov"
