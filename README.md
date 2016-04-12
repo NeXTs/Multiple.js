@@ -5,6 +5,6 @@
 
 > An experiment in sharing background across multiple elements using CSS.
 
-[Demo, usage, etc…](http://nexts.github.io/Multiple.js/)
+[Demo, usage, etc…](http://multiple.js.org/)
 
-[![example](http://nexts.github.io/Multiple.js/dist/images/demo.jpg)](http://nexts.github.io/Multiple.js/)
+[![example](http://nexts.github.io/Multiple.js/dist/images/demo.jpg)](http://multiple.js.org/)
