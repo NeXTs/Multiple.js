@@ -1,7 +1,7 @@
 {
   "name": "multiple.js",
   "version": "0.0.1",
-  "description": "Sharing background over multiple elements",
+  "description": "Sharing background across multiple elements using CSS",
   "main": "multiple.js",
   "style": "multiple.css",
   "scripts": {
