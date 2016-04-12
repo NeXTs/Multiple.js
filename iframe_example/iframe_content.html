@@ -209,27 +209,6 @@
           }
         },
         layers: {},
-        toggleBackground: function(state) {
-          var backgroundType = state ? 'image' : 'gradient';
-          layersManager.layers.dark.update(this.backgrounds.dark[backgroundType]);
-          layersManager.layers.light.update(this.backgrounds.light[backgroundType]);
-          layersManager.layers.darkText.update(this.backgrounds.dark[backgroundType]);
-        },
-        toggleGap: function(state) {
-          $('body').toggleClass('separate-boxes', state);
-        },
-        getRandomInt: function(min, max) {
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        },
-        toggleMissed: function(state) {
-          if( ! state) return $('.box.missed', '.container').removeClass('missed');
-
-          var $boxes = $('.box.dark, .box.light', '.container');
-          var hideAmount = this.getRandomInt(1, $boxes.length / 2);
-          for(var i = 0; i < hideAmount; i++) {
-            $boxes.eq(this.getRandomInt(1, $boxes.length)).addClass('missed');
-          }
-        },
         init: function(backgroundType) {
           this.layers.dark = new Multiple({
             selector: '.box.dark',
