@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
   <link rel="stylesheet" href="./dist/styles/homepage.css">
   <script>
+  //https://github.com/luisvinicius167/gliojs
+  //todo: move to cdn
+  !function(t,e){var i={config:{screenWidthFragment:12,centerTopHeight:10,heightTopLeft:30,heightTopRight:30},statusTopLeft:"inactive",statusTopRight:"inactive",statusBottomLeft:"inactive",statusBottomRight:"inactive",statusTop:"inactive",init:function(){i.methods=Array.prototype.slice.call(arguments),Array.prototype.forEach.call(i.methods,function(t){i.getDirection(t[0],"top-left")?i.topLeftFn=i.trigger(t[1]):i.getDirection(t[0],"top-right")?i.topRightFn=i.trigger(t[1]):i.getDirection(t[0],"bottom-right")?i.bottomRightFn=i.trigger(t[1]):i.getDirection(t[0],"bottom-left")?i.bottomLeftFn=i.trigger(t[1]):i.getDirection(t[0],"top")&&(i.TopFn=i.trigger(t[1]))}),e.body.addEventListener("mousemove",function(t){var e=t.clientX,o=t.clientY;"function"==typeof i.topLeftFn&&"inactive"===i.statusTopLeft&&i.callTopleft(e,o,i.topLeftFn),"function"==typeof i.topRightFn&&"inactive"===i.statusTopRight&&i.callTopRight(e,o,i.topRightFn),"function"==typeof i.bottomLeftFn&&"inactive"===i.statusBottomLeft&&i.callBottomLeft(e,o,i.bottomLeftFn),"function"==typeof i.bottomRightFn&&"inactive"===i.statusBottomRight&&i.callBottomRight(e,o,i.bottomRightFn),"function"==typeof i.TopFn&&"inactive"===i.statusTop&&i.callTop(e,o,i.TopFn)})},trigger:function(t){return t},getWidthRightValue:function(){var t=i.getScreenWidthFragment(),e=t*i.config.screenWidthFragment-t;return parseInt(e)},getTopHeight:function(){var t=50;return t},getScreenWidthFragment:function(){var e=parseInt(t.innerWidth)/i.config.screenWidthFragment;return e},getScreenHeightFragment:function(){var e=parseInt(t.innerHeight)/i.config.screenWidthFragment;return e},getBottomHeightValue:function(){var t=i.getScreenHeightFragment(),e=t*i.config.screenWidthFragment-t;return e},getDirection:function(t,e){return t===e?!0:!1},callTopleft:function(t,e,o){t<=i.getScreenWidthFragment()&&e<=i.config.heightTopLeft&&(i.statusTopLeft="active",o())},callTopRight:function(t,e,o){t>i.getWidthRightValue()&&e<=i.config.heightTopRight&&(i.statusTopRight="active",o())},callBottomRight:function(t,e,o){t>=i.getWidthRightValue()&&e>=i.getBottomHeightValue()&&(i.statusBottomRight="active",o())},callBottomLeft:function(t,e,o){t<=i.getScreenWidthFragment()&&e>=i.getBottomHeightValue()&&(i.statusBottomLeft="active",o())},positionsTopY:[],callTop:function(t,e,o){e>i.config.centerTopHeight+1&&i.positionsTopY.push(e),t>i.getScreenWidthFragment()&&t<i.getWidthRightValue()&&e<=i.config.centerTopHeight&&i.positionsTopY[0]>i.config.centerTopHeight&&(i.statusTop="active",o())},start:function(){return{init:i.init,config:i.config}}};t.glio||(t.glio=i.start())}(window,document);</script>
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -77,7 +81,7 @@
     </div>
     <div class="ui divider"></div>
   </div>
-  <div class="ui left aligned container">        
+  <div class="ui left aligned container" id="howItWorks">      
     <div class="ui ignored info message">
       <h3>Not peeping into sources, think for a moment about how this effect may be implemented at <span class="force-one-line"><span class="ui teal label">pure CSS</span> ?</span></h3>
       <div class="ui styled fluid accordion">
@@ -108,7 +112,7 @@
             <p><code class="language-css">background-attachment: fixed</code> expands background to viewport's size and displays in every element appropriate chunk, exactly what is needed!</p>
             <p>But here we stumble upon a problem with mobile devices, as far as they seems to ignore <code class="language-css">background-attachment: fixed</code> property for <a href="https://twitter.com/paul_irish/status/306818591196602368" target="_blank">performance reasons</a>. Background behaves as with default value <code class="language-css">background-attachment: scroll</code>. And in addition to that there are even <a href="http://stackoverflow.com/questions/14115080/detect-support-for-background-attachment-fixed" target="_blank">no way to detect <i class="stack overflow icon"></i></a> support of this property.</p>
             <p>So how to handle this flaw at mobile devices? Think a bit on possible workaround and click a button below.</p>
-            <div class="accordion">
+            <div class="accordion mobile-workaround-accordion" id="mobileWorkaroundAccordion">
               <div class="title">
                 <i class="dropdown icon move-arrow"></i> Mobile workaround
               </div>
@@ -451,21 +455,38 @@ var multiple = new Multiple({
   <div class="ui modal" id="iframeExampleModalBefore">
     <i class="close icon"></i>
     <div class="header">
-    From (note that background is stretched to full-page viewport and keeps fixed on scroll while container size is restricted, so that background isn't fit wholly in container)
+      From (note that background is stretched to full-page viewport and keeps fixed on scroll while container size is restricted, so that background isn't fit wholly in container)
     </div>
     <div class="content">
-    <img class="full-width" src="./dist/images/from.gif" alt="From">
-    <a href="./dist/images/from.gif" target=_blank>Open in new tab</a>
+      <img class="full-width" src="./dist/images/from.gif" alt="From">
+      <a href="./dist/images/from.gif" target=_blank>Open in new tab</a>
     </div>
   </div>
   <div class="ui modal" id="iframeExampleModalTo">
     <i class="close icon"></i>
     <div class="header">
-    To (note that background is stretched to container size so is fully fit and keeps scrolls with the page)
+      To (note that background is stretched to container size so is fully fit and keeps scrolls with the page)
     </div>
     <div class="content">
-    <img class="full-width" src="./dist/images/to.gif" alt="After">
-    <a href="./dist/images/to.gif" target=_blank>Open in new tab</a>
+      <img class="full-width" src="./dist/images/to.gif" alt="After">
+      <a href="./dist/images/to.gif" target=_blank>Open in new tab</a>
+    </div>
+  </div>
+  <div class="ui basic modal dont-leave-modal" id="readHowItWorksModal">
+    <i class="close icon"></i>
+    <div class="header">
+      Hey!
+    </div>
+    <div class="content">
+      <p>I see you haven't read the entire <b>"How it works"</b> section.</p>
+      <p>How about spend a minute to check youself by answering questions there?</p>
+      <p>It's <span class="attention">not that obvious</span> as you may think!</p>
+    </div>
+    <div class="actions">
+      <div class="ui positive right labeled icon button">
+        Okay, show me
+        <i class="checkmark icon"></i>
+      </div>
     </div>
   </div>
 
@@ -480,7 +501,14 @@ var multiple = new Multiple({
     });
     
     $(function() {
-      $('.ui.accordion').accordion();
+
+      var showNotLeaveModal = true;
+
+      $('.accordion.mobile-workaround-accordion').accordion({
+        onOpen: function() {
+          showNotLeaveModal = false;
+        }
+      })
       $('.popup').popup();
       
       $('#iframeExampleBefore').on('click', function(e) {
@@ -538,6 +566,21 @@ var multiple = new Multiple({
         }, 980);
       }
       toggleTada();
+
+      function whereAreYouGoing() {
+        if( ! showNotLeaveModal) return;
+        $('#readHowItWorksModal').modal('show').modal({
+          onApprove: function() {
+            $("html, body").animate({ scrollTop: $('#howItWorks').offset().top - 10 }, 450);
+          }
+        });
+      }
+
+      glio.init(
+        [ 'top', whereAreYouGoing],
+        [ 'top-left', whereAreYouGoing],
+        [ 'top-right', whereAreYouGoing]
+      )
     });
   </script>
 </body>

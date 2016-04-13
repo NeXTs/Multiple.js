@@ -50,6 +50,18 @@ body {
   font-size: .9rem !important;
   margin-top: 4px !important;
 }
+.dont-leave-modal .header {
+  text-align: center;
+}
+.dont-leave-modal .content {
+  text-align: center;
+  font-size: 1.3rem !important;
+  padding: 3rem 1.5rem !important;
+}
+.dont-leave-modal .content .attention {
+  color: #c53b3b;
+  font-weight: bold;
+}
 .top-accordion {
   padding: 0 !important;
 }
