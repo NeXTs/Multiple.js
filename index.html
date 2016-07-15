@@ -435,6 +435,7 @@ var multiple = new Multiple({
         <p>Please note, this is experimental library so performance of page may be low because of usage of intensive CSS properties to achieve desired effects.</p>
       </div>
     </div>
+    <div class="ui three column doubling stackable grid" id="tweets"></div>
     <h2>Author</h2>
     <div class="ui grid stackable">
       <div class="eight wide column">
@@ -494,95 +495,7 @@ var multiple = new Multiple({
   <script src="https://cdn.jsdelivr.net/prism/1.4.1/prism.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gliojs/0.0.7/glio.min.js"></script>
-  <script>
-    // to keep iframe height equal to iframe's content
-    iFrameResize({
-      checkOrigin: false
-    });
-    
-    $(function() {
-
-      var showNotLeaveModal = true;
-
-      $('.accordion.mobile-workaround-accordion').accordion({
-        onOpen: function() {
-          showNotLeaveModal = false;
-        }
-      })
-      $('.popup').popup();
-      
-      $('#iframeExampleBefore').on('click', function(e) {
-        e.preventDefault();
-        $('#iframeExampleModalBefore').modal('show');
-      });
-
-      $('#iframeExampleTo').on('click', function(e) {
-        e.preventDefault();
-        $('#iframeExampleModalTo').modal('show');
-      })
-
-      var iframeWindow = document.getElementById('iframe').contentWindow;
-
-      $('#toggleGap').checkbox({
-        onChange: function() {
-          var state = $(this).is(':checked');
-          iframeWindow.layersManager.toggleGap(state);
-        }
-      });
-
-      $('#toggleMissed').checkbox({
-        onChange: function() {
-          var state = $(this).is(':checked');
-          iframeWindow.layersManager.toggleMissed(state);
-        }
-      });
-
-      $('#toggleBackground').checkbox({
-        onChange: function() {
-          var state = +$(this).is(':checked');
-          iframeWindow.layersManager.toggleBackground(state);
-        }
-      });
-
-      var showTada = true;
-      var $tada = $('#openDescriptionTadaEffect');
-      var $dimmer = $('.ui.dimmer');
-      $dimmer.dimmer({
-        onHide: function() {
-          showTada = false;
-        }
-      }).dimmer('show');
-      // workaround for some mobile phones
-      $dimmer.on('tap', function() {
-        $dimmer.dimmer('hide');
-      });
-
-      function toggleTada() {
-        if( ! showTada) return;
-        $tada.addClass('tada animated infinite');
-        setTimeout(function() {
-          $tada.removeClass('tada animated infinite');
-          setTimeout(toggleTada, 3000);
-        }, 980);
-      }
-      toggleTada();
-
-      function whereAreYouGoing() {
-        if( ! showNotLeaveModal) return;
-        $('#readHowItWorksModal').modal('show').modal({
-          onApprove: function() {
-            $("html, body").animate({ scrollTop: $('#howItWorks').offset().top - 10 }, 450);
-          }
-        });
-      }
-
-      glio.init(
-        [ 'top', whereAreYouGoing],
-        [ 'top-left', whereAreYouGoing],
-        [ 'top-right', whereAreYouGoing]
-      )
-    });
-  </script>
+  <script src="./src/scripts/support.js"></script>
 </body>
 
 </html>
