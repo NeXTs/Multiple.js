@@ -203,3 +203,30 @@ body {
     display: none;
   }
 }
+.see-also {
+  background-size: cover;
+  background-position: top;
+  display: block;
+  width: 100%;
+  height: 65px;
+  position: relative;
+}
+.see-also:hover:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.see-also-container .column {
+  padding-bottom: 0 !important;
+}
+.see-also-clusterize {
+  background-image: url('../images/clusterize.png');
+  background-position: center;
+}
+.see-also-jets {
+  background-image: url('../images/jets.png');
+}
