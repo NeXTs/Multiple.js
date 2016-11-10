@@ -418,6 +418,10 @@ body.separate-boxes .box.dark {
   padding-top: 6px;
 }
 .box .content-main-text .fa {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   background: inherit;
   font-size: 4.8rem;
   -webkit-transform: translateY(-10px);
