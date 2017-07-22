@@ -210,7 +210,6 @@ body {
   width: 100%;
   height: 65px;
   position: relative;
-  -webkit-transition: all 0.35s ease-out;
   transition: all 0.35s ease-out;
 }
 .see-also:hover:before {
