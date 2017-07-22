@@ -626,3 +626,7 @@ body:after {
     height: auto !important;
   }
 }
+#carbonads ~ .content-main-text,
+#carbonads ~ .content-sub-text {
+  display: none;
+}
