@@ -610,12 +610,20 @@ body:after {
   margin: 10px;
   text-transform: initial;
   font-size: 12px;
+  text-decoration: none;
+}
+.carbon-text:hover {
+  text-decoration: underline;
 }
 .carbon-img {
   display: inline-block;
 }
 .carbon-poweredby {
   text-transform: initial;
+  text-decoration: none;
+}
+.carbon-poweredby:hover {
+  text-decoration: underline;
 }
 @media all and (max-width: 610px) {
   .carbon-text {
