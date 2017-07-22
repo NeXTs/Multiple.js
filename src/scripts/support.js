@@ -158,4 +158,18 @@ $(function() {
 
     return array;
   }
+
+  $(window).load(function() {
+    var $iframe = $('#iframe')
+    if( ! $iframe.length) return
+    setTimeout(function() {
+      $iframe.width($iframe.width()-1)
+      setTimeout(function() {
+        $iframe.width($iframe.width()+1)
+        setTimeout(function() {
+          $iframe.css('width', '100%')
+        }, 0)
+      }, 0)
+    }, 0)
+  })
 });
