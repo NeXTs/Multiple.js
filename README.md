@@ -7,6 +7,4 @@
 
 [Demo, usage, etc…](http://multiple.js.org/)
 
-[![Code Sponsor](https://app.codesponsor.io/embed/VdXnbBqMapoM2ygsq3ca62Sy/NeXTs/Multiple.js.svg)](https://app.codesponsor.io/link/VdXnbBqMapoM2ygsq3ca62Sy/NeXTs/Multiple.js)
-
 [![example](http://nexts.github.io/Multiple.js/dist/images/demo.jpg)](http://multiple.js.org/)
